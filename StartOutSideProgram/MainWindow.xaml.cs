@@ -24,24 +24,33 @@ namespace StartOutSideProgram
         public MainWindow()
         {
             string outsideAppFullPath;
-
-            if (Myset.Default.ApplicationName.StartsWith("./"))
+            for (int i = 0; i < Myset.Default.ApplicationName.Count; i++)
             {
-                outsideAppFullPath=Myset.Default.ApplicationName.Replace("./", System.Threading.Thread.GetDomain().BaseDirectory);
+                if (Myset.Default.ApplicationName[i].StartsWith("./"))
+                {
+                    outsideAppFullPath = Myset.Default.ApplicationName[i].Replace("./", System.Threading.Thread.GetDomain().BaseDirectory);
+                }
+                else
+                {
+                    outsideAppFullPath = Myset.Default.ApplicationName[i];
+                }
+                try
+                {
+                    if (Myset.Default.ApplicationName.Count <= i)
+                    {
+                        Process.Start(outsideAppFullPath, Myset.Default.Parameter[i]);
+                    }
+                    else
+                    {
+                        Process.Start(outsideAppFullPath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\noutsideAppFullPath = " + outsideAppFullPath + "\nParameter=" + Myset.Default.Parameter);
+                }
             }
-            else
-            {
-                outsideAppFullPath = Myset.Default.ApplicationName;
-            }
-            try
-            {
-                Process.Start(outsideAppFullPath, Myset.Default.Parameter);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\noutsideAppFullPath = " + outsideAppFullPath + "\nParameter=" + Myset.Default.Parameter);
-            }
-            InitializeComponent();
+            //InitializeComponent();
             this.Close();
         }
     }

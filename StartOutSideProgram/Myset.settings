@@ -2,10 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="StartOutSideProgram" GeneratedClassName="Myset">
   <Profiles />
   <Settings>
-    <Setting Name="ApplicationName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">./正则表达式助手.exe</Value>
+    <Setting Name="ApplicationName" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;./正则表达式助手.exe&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
     </Setting>
-    <Setting Name="Parameter" Type="System.String" Scope="User">
+    <Setting Name="Parameter" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

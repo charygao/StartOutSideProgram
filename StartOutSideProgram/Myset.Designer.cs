@@ -25,10 +25,12 @@ namespace StartOutSideProgram {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("./正则表达式助手.exe")]
-        public string ApplicationName {
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
+            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
+            "tring>./正则表达式助手.exe</string>\r\n</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection ApplicationName {
             get {
-                return ((string)(this["ApplicationName"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["ApplicationName"]));
             }
             set {
                 this["ApplicationName"] = value;
@@ -37,10 +39,9 @@ namespace StartOutSideProgram {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Parameter {
+        public global::System.Collections.Specialized.StringCollection Parameter {
             get {
-                return ((string)(this["Parameter"]));
+                return ((global::System.Collections.Specialized.StringCollection)(this["Parameter"]));
             }
             set {
                 this["Parameter"] = value;
